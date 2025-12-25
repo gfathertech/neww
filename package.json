@@ -16,7 +16,7 @@
 		"eslint": "^9.39.2",
 		"globals": "^16.5.0",
 		"prettier": "^3.7.4",
-  "express": "4.19.2"
+    "express": "4.19.2"
 	},
 	"dependencies": {
 		"baileys": "github:WhiskeySockets/Baileys",
