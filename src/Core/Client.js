@@ -25,7 +25,8 @@ const phone = config.phone
 /** Creates and starts the WhatsApp socket connection */
 export const start = async () => {
 	// Production Alternative: Use SQL/Redis by creating your own auth state implementation
-	const { state, saveCreds } = await useMultiFileAuthState('session')
+	const { state, saveCreds } = await useMongoAuthState()
+//useMultiFileAuthState('session')
 	const { version } = await fetchLatestBaileysVersion()
 
 	const sock = makeWASocket({
