@@ -16,7 +16,9 @@ try {
 	await initHandlers()
 console.log("First");
 	await reloadPlugins()
+log.info("Second")
 	await startBot()
+log.info("Third")
 } catch (err) {
 	log.error(`Error: ${err.message}`)
 	process.exit(1)
