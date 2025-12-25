@@ -9,6 +9,7 @@ import makeWASocket, {
 import MAIN_LOGGER from 'pino'
 import NodeCache from '@cacheable/node-cache'
 import { processCommand } from './BaseBot.js'
+import { useMongoAuthState } from './Mongodb.js'
 import { config } from '#config'
 import qrcode from 'qrcode-terminal'
 import { Serialize, cachedGroupMetadata, MetadataCache } from '#lib'
