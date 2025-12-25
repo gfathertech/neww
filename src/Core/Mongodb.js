@@ -19,7 +19,7 @@ async function initMongo() {
   return authCollection
 }
 
-async function useMongoAuthState() {
+export async function useMongoAuthState() {
   const col = await initMongo()
 
   const credsDoc = await col.findOne({ _id: 'creds' })
