@@ -14,6 +14,7 @@ process.env.TZ = 'Asia/Jakarta'
 
 try {
 	await initHandlers()
+console.log("First");
 	await reloadPlugins()
 	await startBot()
 } catch (err) {
