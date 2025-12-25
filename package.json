@@ -19,7 +19,7 @@
 
   "dependencies": {
     "express": "4.19.2",
-     "mongodb": "6.5.0"
+    "mongodb": "6.5.0"
     "baileys": "github:WhiskeySockets/Baileys",
     "qrcode-terminal": "^0.12.0"
   },
