@@ -1,31 +1,39 @@
 {
-	"name": "base-bot",
-	"version": "0.0.4",
-	"description": "Simple Base Bot Baileys",
-	"main": "main.js",
-	"scripts": {
-		"start": "node main.js",
-		"lint": "eslint . --ext .js --fix",
-		"format": "prettier --write ."
-	},
-	"author": "ZAIDAN",
-	"license": "ISC",
-	"type": "module",
-	"devDependencies": {
-		"@eslint/js": "^9.39.2",
-		"eslint": "^9.39.2",
-		"globals": "^16.5.0",
-		"prettier": "^3.7.4",
-    "express": "4.19.2"
-	},
-	"dependencies": {
-		"baileys": "github:WhiskeySockets/Baileys",
-		"qrcode-terminal": "^0.12.0"
-	},
-	"imports": {
-		"#config": "./config.js",
-		"#lib": "./src/Lib/index.js",
-		"#core": "./src/Core/index.js",
-		"#utils": "./src/Utils/index.js"
-	}
+  "name": "base-bot",
+  "version": "0.0.4",
+  "description": "Simple Base Bot Baileys",
+  "main": "main.js",
+  "type": "module",
+  "author": "ZAIDAN",
+  "license": "ISC",
+
+  "scripts": {
+    "start": "node main.js",
+    "lint": "eslint . --ext .js --fix",
+    "format": "prettier --write ."
+  },
+
+  "engines": {
+    "node": ">=18"
+  },
+
+  "dependencies": {
+    "express": "4.19.2",
+    "baileys": "github:WhiskeySockets/Baileys",
+    "qrcode-terminal": "^0.12.0"
+  },
+
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "globals": "^16.5.0",
+    "prettier": "^3.7.4"
+  },
+
+  "imports": {
+    "#config": "./config.js",
+    "#lib": "./src/Lib/index.js",
+    "#core": "./src/Core/index.js",
+    "#utils": "./src/Utils/index.js"
+  }
 }
