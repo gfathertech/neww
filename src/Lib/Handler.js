@@ -44,7 +44,7 @@ async function loadHandlers(dir) {
 
 /** Initializes all handlers from the Handlers directory */
 export async function initHandlers() {
-	const handlersDir = path.join(process.cwd(), 'src', 'Handlers')
+	const handlersDir = path.join(process.cwd(), 'src', 'Handler')
 	await loadHandlers(handlersDir)
 	handlers.sort((a, b) => a.priority - b.priority)
 	log.info('Load All Handler done...')
