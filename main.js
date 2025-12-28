@@ -5,18 +5,20 @@
 */
 
 import express from 'express'
-import { startBot } from '#core'
+import { startBot, initMongo} from '#core'
 import { initHandlers, reloadPlugins } from '#lib'
 import { log } from '#utils'
+import { initConfig } from '#config'
 
 log.info(`Start BaseBot ...`)
 
-process.env.TZ = 'Asia/Jakarta'
+process.env.TZ = 'Asia/Jakarta' 
 
 const app = express()
 const PORT = process.env.PORT || 7860
 
 let botStarted = false
+
 
 // 🟢 Hugging Face root endpoint
 app.get('/', (req, res) => {
@@ -39,6 +41,12 @@ app.listen(PORT, async () => {
   botStarted = true
 
   try {
+    await initConfig()
+    log.info("Config loaded")
+    
+    await initMongo()
+    log.info("MongoDB connected")
+    
     await initHandlers()
     console.log("First")
 
