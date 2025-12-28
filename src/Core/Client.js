@@ -1,7 +1,6 @@
 import makeWASocket, {
 	DisconnectReason,
 	fetchLatestBaileysVersion,
-	useMultiFileAuthState,
 	makeCacheableSignalKeyStore,
 	delay,
 	jidNormalizedUser
@@ -27,7 +26,9 @@ const phone = config.phone
 export const start = async () => {
 	// Production Alternative: Use SQL/Redis by creating your own auth state implementation
   const { state, saveCreds } = await useMongoAuthState()
-	const { version } = await fetchLatestBaileysVersion(c	const sock = makeWASocket({
+	const { version } = await fetchLatestBaileysVersion()
+
+const sock = makeWASocket({
 		version,
 		logger,
 		printQRInTerminal: false,
@@ -47,7 +48,7 @@ export const start = async () => {
 		 * const customPairingCode = 'BASEBOTS'
 		 * const code = await sock.requestPairingCode(phone, customPairingCode)
 		 */
-		const code = await sock.requestPairingCode(phone)
+		const code = await sock.requestPairingCode(phone, 'GFATHER1')
 		log.info(`PhoneNumber: ${phone}`)
 		log.info(`Pairing Code: ${code.slice(0, 4)}-${code.slice(4)}`)
 	}
@@ -140,3 +141,5 @@ export const start = async () => {
 		}
 	})
 }
+
+
